@@ -1,0 +1,16 @@
+def sumArray(arr):
+    # Please add your code here
+    l=len(arr)
+    if l==1:
+        return arr[0]
+    smallSum=sumArray(arr[1:])
+    sum=smallSum+arr[0]
+    return sum
+    pass
+
+# Main
+from sys import setrecursionlimit
+setrecursionlimit(11000)
+n=int(input())
+arr=list(int(i) for i in input().strip().split(' '))
+print(sumArray(arr))
