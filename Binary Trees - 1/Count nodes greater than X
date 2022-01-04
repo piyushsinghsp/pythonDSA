@@ -1,0 +1,8 @@
+def countNodesGreaterThanX(root, x) :
+	#Your code goes here
+    if root==None:
+        return 0
+    if root.data>x:
+        return 1+countNodesGreaterThanX(root.left, x)+countNodesGreaterThanX(root.right, x)
+    else:
+        return countNodesGreaterThanX(root.left, x)+countNodesGreaterThanX(root.right, x)
